@@ -30,8 +30,7 @@ project "Rizeq"
     
     filter "configurations:Dist"
         optimize "On"
-
-
+    
 project "Injected"
     location "src/%{prj.name}"
     files { "%{prj.location}/**.h", "%{prj.location}/**.cpp" }
@@ -42,7 +41,7 @@ project "Injected"
     cppdialect "C++20"
 
     pchheader "pch.h"
-    pchsource "%{prj.location}/pch.cpp"
+    pchsource "%{prj.location}/src/pch.cpp"
 
     targetdir ("bin/" .. output_template)
     objdir ("bin-intermediates/" .. output_template .. "/%{prj.name}")
