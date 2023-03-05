@@ -3,6 +3,7 @@ workspace "gta-internal"
     configurations { "Debug", "Release", "Dist" }
     startproject "Rizeq"
 
+    
 project "Rizeq"
     location "src/Rizeq"
     files { "%{prj.location}/**.h", "%{prj.location}/**.cpp" }
@@ -27,6 +28,7 @@ project "Rizeq"
     
     filter "configurations:Dist"
         optimize "On"
+
 
 project "Injected"
     location "src/Injected"
