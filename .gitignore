@@ -407,3 +407,5 @@ FodyWeavers.xsd
 *.sln
 *.vcxproj
 *.vcxproj.filters
+
+bin-intermidiates/
