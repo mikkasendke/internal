@@ -1,6 +1,5 @@
 #pragma once
 
-
 // standard io
 #include <iostream>
 
