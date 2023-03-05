@@ -1,11 +1,13 @@
+output_template = "%{cfg.system}/%{cfg.architecture}-%{cfg.buildcfg}"
+
 workspace "gta-internal"
     architecture ("x64")
     configurations { "Debug", "Release", "Dist" }
     startproject "Rizeq"
 
-    
+
 project "Rizeq"
-    location "src/Rizeq"
+    location "src/%{prj.name}"
     files { "%{prj.location}/**.h", "%{prj.location}/**.cpp" }
 
     kind "ConsoleApp"
@@ -13,8 +15,8 @@ project "Rizeq"
     language "C++"
     cppdialect "C++20"
     
-    targetdir "bin/%{cfg.buildcfg}"
-    objdir ("bin/%{cfg.buildcfg}/intermediates")
+    targetdir ("bin/" .. output_template)
+    objdir ("bin-intermediates/" .. output_template)
     
     characterset ("MBCS")
     
@@ -31,7 +33,7 @@ project "Rizeq"
 
 
 project "Injected"
-    location "src/Injected"
+    location "src/%{prj.name}"
     files { "%{prj.location}/**.h", "%{prj.location}/**.cpp" }
 
     kind "SharedLib"
@@ -42,8 +44,8 @@ project "Injected"
     pchheader "pch.h"
     pchsource "%{prj.location}/pch.cpp"
 
-    targetdir "bin/%{cfg.buildcfg}"
-    objdir ("bin/%{cfg.buildcfg}/intermediates")
+    targetdir ("bin/" .. output_template)
+    objdir ("bin-intermediates/" .. output_template)
     
     characterset ("MBCS")
 
