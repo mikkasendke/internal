@@ -1,3 +1,6 @@
 [submodule "Xenos"]
 	path = Xenos
 	url = https://github.com/DarthTon/Xenos.git
+[submodule "vendor/Xenos"]
+	path = vendor/Xenos
+	url = https://github.com/DarthTon/Xenos.git
