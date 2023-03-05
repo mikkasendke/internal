@@ -43,6 +43,8 @@ project "Injected"
     pchheader "pch.h"
     pchsource "%{prj.location}/src/pch.cpp"
 
+    includedirs { "%{prj.location}/src" }
+
     targetdir ("bin/" .. output_template)
     objdir ("bin-intermediates/" .. output_template .. "/%{prj.name}")
     
