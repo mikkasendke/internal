@@ -408,4 +408,4 @@ FodyWeavers.xsd
 *.vcxproj
 *.vcxproj.filters
 
-bin-intermidiates/
+bin-intermediates/
