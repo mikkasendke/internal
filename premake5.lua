@@ -16,7 +16,7 @@ project "Rizeq"
     cppdialect "C++20"
     
     targetdir ("bin/" .. output_template)
-    objdir ("bin-intermediates/" .. output_template)
+    objdir ("bin-intermediates/" .. output_template .. "/%{prj.name}")
     
     characterset ("MBCS")
     
@@ -45,7 +45,7 @@ project "Injected"
     pchsource "%{prj.location}/pch.cpp"
 
     targetdir ("bin/" .. output_template)
-    objdir ("bin-intermediates/" .. output_template)
+    objdir ("bin-intermediates/" .. output_template .. "/%{prj.name}")
     
     characterset ("MBCS")
 
