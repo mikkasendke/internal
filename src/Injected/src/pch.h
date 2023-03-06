@@ -3,7 +3,13 @@
 // standard io
 #include <iostream>
 
-// Windows api
+#include <string>
+#include <vector>
+
+//// Windows api
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-
+    
+// for windows
+#include <tlhelp32.h>
+#include <tchar.h>

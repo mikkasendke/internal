@@ -3,6 +3,7 @@
 
 namespace IJ {
 
-	void OnAttach(HMODULE hModule);
-	void OnDetach(HMODULE hModule);
+    void OnAttach(HMODULE hModule);
+    void OnDetach(HMODULE hModule);
+    DWORD GetProcessIdFromModule(HMODULE hModule);
 }
