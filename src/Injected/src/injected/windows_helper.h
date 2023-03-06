@@ -1,7 +1,8 @@
 #pragma once
 
-namespace WindowsHelper {
-    DWORD GetProcessIdFromModule(HMODULE hModule);
+namespace windows_helper {
+
+    DWORD GetProcessIdFromModule(HMODULE h_module);
 }
 
 

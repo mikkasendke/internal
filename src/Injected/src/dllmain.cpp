@@ -1,21 +1,23 @@
 #include <pch.h>
 #include <injected/injected.h>
 
-BOOL APIENTRY DllMain( HMODULE hModule,
-                       DWORD  ul_reason_for_call,
-                       LPVOID lpReserved
-                     )
-{
+BOOL APIENTRY DllMain(const HMODULE h_module,
+                      const DWORD  ul_reason_for_call,
+                      LPVOID /*lp_reserved*/
+) {
+
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        IJ::OnAttach(hModule);
+        ij::OnAttach(h_module);
         break;
-    case DLL_THREAD_ATTACH:
-    case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
-        IJ::OnDetach(hModule);
+        ij::OnDetach(h_module);
         break;
+
+	default: 
+        break;;
     }
+
     return TRUE;
 }

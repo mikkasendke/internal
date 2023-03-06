@@ -1,40 +1,40 @@
 #pragma once
 #include <string>
-namespace RQ {
+namespace rq {
 
 	struct XenosProfile {
-	public:
-		std::string Build();
 
-		XenosProfile SetDllPath(std::string path);
-		XenosProfile SetManualMapFlags(std::string flags);
-		XenosProfile SetTargetPath(std::string process_name);
-		XenosProfile SetHijack(std::string value);
-		XenosProfile SetUnlink(std::string value);
-		XenosProfile SetErasePE(std::string value);
-		XenosProfile SetClose(std::string value);
-		XenosProfile SetKrnHandle(std::string handle);
-		XenosProfile SetInjIndef(std::string value);
-		XenosProfile SetProcessMode(std::string process_mode);
-		XenosProfile SetInjectMode(std::string inject_mode);
-		XenosProfile SetDelayMs(std::string delay_in_ms);
-		XenosProfile SetPeriod(std::string value);
-		XenosProfile SetSkip(std::string value);
+		std::string Build() const;
+
+		XenosProfile SetDllPath(const std::string& path);
+		XenosProfile SetManualMapFlags(const std::string& flags);
+		XenosProfile SetTargetPath(const std::string& process_name);
+		XenosProfile SetHijack(const std::string& value);
+		XenosProfile SetUnlink(const std::string& value);
+		XenosProfile SetErasePe(const std::string& value);
+		XenosProfile SetClose(const std::string& value);
+		XenosProfile SetKrnHandle(const std::string&& handle);
+		XenosProfile SetInjIndef(const std::string& value);
+		XenosProfile SetProcessMode(const std::string& process_mode);
+		XenosProfile SetInjectMode(const std::string& inject_mode);
+		XenosProfile SetDelayMs(const std::string& delay_in_ms);
+		XenosProfile SetPeriod(const std::string& value);
+		XenosProfile SetSkip(const std::string& value);
 	private:
-		std::string imagePath = "";
-		std::string manualMapFlags = "0";
-		std::string procName = "";
-		std::string hijack = "0";
-		std::string unlink = "0";
-		std::string erasePE = "0";
-		std::string close = "0";
-		std::string krnHandle = "0";
-		std::string injIndef = "0";
-		std::string processMode = "0";
-		std::string injectMode = "0";
-		std::string delay = "0";
-		std::string period = "0";
-		std::string skip = "0";
+		std::string m_image_path;
+		std::string m_manual_map_flags = "0";
+		std::string m_proc_name;
+		std::string m_hijack = "0";
+		std::string m_unlink = "0";
+		std::string m_erase_pe = "0";
+		std::string m_close = "0";
+		std::string m_krn_handle = "0";
+		std::string m_inj_indef = "0";
+		std::string m_process_mode = "0";
+		std::string m_inject_mode = "0";
+		std::string m_delay = "0";
+		std::string m_period = "0";
+		std::string m_skip = "0";
 
 	};
 }

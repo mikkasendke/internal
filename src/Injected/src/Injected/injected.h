@@ -1,9 +1,10 @@
 #pragma once
 #include <pch.h>
 
-namespace IJ {
+namespace ij {
 
-    void OnAttach(HMODULE hModule);
-    void OnDetach(HMODULE hModule);
-    DWORD GetProcessIdFromModule(HMODULE hModule);
+    void OnAttach(HMODULE h_module);
+    void OnDetach(HMODULE h_module);
+
+    DWORD WINAPI ThreadFunc(LPVOID lpParam);
 }

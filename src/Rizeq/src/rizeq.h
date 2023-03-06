@@ -8,16 +8,18 @@
 
 #include "XenosProfile.h"
 
-namespace RQ {
+namespace rq {
 	struct StartProcessInfo {
 		bool success;
-		HANDLE hProcess;
-		HANDLE hThread;
-		DWORD dwProcessId;
-		DWORD dwThreadId;
+		HANDLE h_process;
+		HANDLE h_thread;
+		DWORD dw_process_id;
+		DWORD dw_thread_id;
 	};
-	StartProcessInfo StartProcess(std::string path, std::string args);
-	std::string GetAbsPathToParentDirAsString(std::string input);
-	void CreateFileWithText(std::string path, std::string name, std::string data);
-	void DeleteFileByString(std::string path);
+
+	StartProcessInfo StartProcess(const std::string& path, std::string args, const std::string& working_directory);
+
+	std::string GetAbsPathToParentDirAsString(const std::string& input);
+	std::string CreateFileWithText(const std::string& path, const std::string& name, const std::string& data);
+	void DeleteFileByString(const std::string& path);
 }

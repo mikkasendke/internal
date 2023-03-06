@@ -1,83 +1,97 @@
 #include "XenosProfile.h"
 
-namespace RQ {
+namespace rq {
 
-	std::string XenosProfile::Build() {
+	std::string XenosProfile::Build() const {
 		return std::string("<XenosConfig>\n"
-			"	<imagePath>" + imagePath + "</imagePath>\n"
-			"	<manualMapFlags>" + manualMapFlags + "</manualMapFlags>\n"
-			"	<procName>" + procName + "</procName>\n"
-			"	<hijack>" + hijack + "</hijack>\n"
-			"	<unlink>" + unlink + "</unlink>\n"
-			"	<erasePE>" + erasePE + "</erasePE>\n"
-			"	<close>" + close + "</close>\n"
-			"	<krnHandle>" + krnHandle + "</krnHandle>\n"
-			"	<injIndef>" + injIndef + "</injIndef>\n"
-			"	<processMode>" + processMode + "</processMode>\n"
-			"	<injectMode>" + injectMode + "</injectMode>\n"
-			"	<delay>" + delay + "</delay>\n"
-			"	<period>" + period + "</period>\n"
-			"	<skip>" + skip + "</skip>\n"
+			"	<imagePath>" + m_image_path + "</imagePath>\n"
+			"	<manualMapFlags>" + m_manual_map_flags + "</manualMapFlags>\n"
+			"	<procName>" + m_proc_name + "</procName>\n"
+			"	<hijack>" + m_hijack + "</hijack>\n"
+			"	<unlink>" + m_unlink + "</unlink>\n"
+			"	<erasePE>" + m_erase_pe + "</erasePE>\n"
+			"	<close>" + m_close + "</close>\n"
+			"	<krnHandle>" + m_krn_handle + "</krnHandle>\n"
+			"	<injIndef>" + m_inj_indef + "</injIndef>\n"
+			"	<processMode>" + m_process_mode + "</processMode>\n"
+			"	<injectMode>" + m_inject_mode + "</injectMode>\n"
+			"	<delay>" + m_delay + "</delay>\n"
+			"	<period>" + m_period + "</period>\n"
+			"	<skip>" + m_skip + "</skip>\n"
 			"	<procCmdLine/>\n"
 			"	<initRoutine/>\n"
 			"	<initArgs/>\n"
 			"</XenosConfig>");
 	}
 
-	XenosProfile XenosProfile::SetDllPath(std::string path) {
-		imagePath = path;
+
+	XenosProfile XenosProfile::SetDllPath(const std::string& path) {
+		m_image_path = path;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetManualMapFlags(std::string flags) {
-		manualMapFlags = flags;
+
+	XenosProfile XenosProfile::SetManualMapFlags(const std::string& flags) {
+		m_manual_map_flags = flags;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetTargetPath(std::string process_name) {
-		procName = process_name;
+
+	XenosProfile XenosProfile::SetTargetPath(const std::string& process_name) {
+		m_proc_name = process_name;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetHijack(std::string value) {
-		hijack = value;
+
+	XenosProfile XenosProfile::SetHijack(const std::string& value) {
+		m_hijack = value;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetUnlink(std::string value) {
-		unlink = value;
+
+	XenosProfile XenosProfile::SetUnlink(const std::string& value) {
+		m_unlink = value;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetErasePE(std::string value) {
-		erasePE = value;
+
+	XenosProfile XenosProfile::SetErasePe(const std::string& value) {
+		m_erase_pe = value;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetClose(std::string value) {
-		close = value;
+
+	XenosProfile XenosProfile::SetClose(const std::string& value) {
+		m_close = value;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetKrnHandle(std::string handle) {
-		krnHandle = handle;
+
+	XenosProfile XenosProfile::SetKrnHandle(const std::string&& handle) {
+		m_krn_handle = handle;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetInjIndef(std::string value) {
-		injIndef = value;
+
+	XenosProfile XenosProfile::SetInjIndef(const std::string& value) {
+		m_inj_indef = value;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetProcessMode(std::string process_mode) {
-		processMode = process_mode;
+
+	XenosProfile XenosProfile::SetProcessMode(const std::string& process_mode) {
+		m_process_mode = process_mode;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetInjectMode(std::string inject_mode) {
-		injectMode = inject_mode;
+
+	XenosProfile XenosProfile::SetInjectMode(const std::string& inject_mode) {
+		m_inject_mode = inject_mode;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetDelayMs(std::string delay_in_ms) {
-		delay = delay_in_ms;
+
+	XenosProfile XenosProfile::SetDelayMs(const std::string& delay_in_ms) {
+		m_delay = delay_in_ms;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetPeriod(std::string value) {
-		period = value;
+
+	XenosProfile XenosProfile::SetPeriod(const std::string& value) {
+		m_period = value;
 		return *this;
 	}
-	XenosProfile XenosProfile::SetSkip(std::string value) {
-		skip = value;
+
+	XenosProfile XenosProfile::SetSkip(const std::string& value) {
+		m_skip = value;
 		return *this;
 	}
 }
