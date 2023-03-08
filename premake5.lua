@@ -5,7 +5,6 @@ workspace "gta-internal"
     configurations { "Debug", "Release", "Dist" }
     startproject "Rizeq"
 
-
 project "Rizeq"
     location "src/%{prj.name}"
     files { "%{prj.location}/**.h", "%{prj.location}/**.cpp" }

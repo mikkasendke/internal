@@ -409,3 +409,4 @@ FodyWeavers.xsd
 *.vcxproj.filters
 
 bin-intermediates/
+test/
