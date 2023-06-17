@@ -410,3 +410,4 @@ FodyWeavers.xsd
 
 bin-intermediates/
 test/
+/src/Rizeq/src/rizeq.cpp
